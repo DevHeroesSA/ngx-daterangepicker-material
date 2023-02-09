@@ -39,13 +39,15 @@
     "build": "ng-packagr -p ng-package.json -c tsconfig.json",
     "build:schematics": "tsc -p ./tsconfig.schematics.json",
     "copy:schematics": "cpr schematics/dist dist/schematics && cp ./schematics/collection.json ./dist/schematics && cp ./schematics/ng-add/schema.json ./dist/schematics/ng-add",
-    "postbuild": "npm run build:schematics && npm run copy:schematics",
-    "postinstall": "tsc --outDir ./build && cpr build/* ./"
+    "postbuild": "npm run build:schematics && npm run copy:schematics"
   },
   "author": "Fetrarijaona R.",
   "repository": {
     "type": "git",
     "url": "https://github.com/fetrarij/ngx-daterangepicker-material.git"
+  },
+  "peerDependencies": {
+    "dayjs": "^1.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^13.3.9",
@@ -100,6 +102,7 @@
     "zone.js": "~0.11.4"
   },
   "dependencies": {
+    "dayjs": "^1.11.5",
     "tslib": "^2.0.0"
   },
   "schematics": "./schematics/collection.json"
